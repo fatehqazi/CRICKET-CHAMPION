@@ -7,8 +7,14 @@
   "scripts": {
     "start": "node server.mjs",
     "test": "node --test tests/engine.test.js",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test:pages": "npm run build:pages && playwright test --config playwright.pages.config.js"
   },
-  "dependencies": { "phaser": "3.90.0" },
-  "devDependencies": { "@playwright/test": "1.56.1" }
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
 }

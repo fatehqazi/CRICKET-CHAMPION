@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b1624">
   <title>Cricket Champions 2D</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="shell">
@@ -41,9 +41,9 @@
       <button id="swing" class="swing-button" disabled>SWING <kbd>SPACE</kbd></button>
     </section>
     <footer><div class="recent"><span class="eyebrow">THIS OVER</span><div id="balls"><span class="ball empty">–</span></div></div><p><kbd>P</kbd> Pause <span>•</span> Find the gaps. Trust your timing.</p><button id="restart" class="text-button">↻ Restart</button></footer>
-    <p id="load-error" role="alert" hidden>Game could not load. Run npm ci, then npm start, and open the server address in Chrome.</p>
+    <p id="load-error" role="alert" hidden>Game could not load. Reload the page and check that the vendor and src folders were published alongside index.html.</p>
   </main>
-  <script src="node_modules/phaser/dist/phaser.min.js" onerror="document.getElementById('load-error').hidden=false"></script>
-  <script type="module" src="src/game.js"></script>
+  <script src="./vendor/phaser-3.90.0.min.js" onerror="document.getElementById('load-error').hidden=false"></script>
+  <script type="module" src="./src/game.js"></script>
 </body>
 </html>
