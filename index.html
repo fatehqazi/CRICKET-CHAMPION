@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1624">
+  <title>Cricket Champions 2D</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead"><a class="brand" href="./"><span class="brand-mark">CC</span><span>CRICKET <b>CHAMPIONS</b><small>THE TWO-OVER CHALLENGE</small></span></a><span class="edition">2D <i>•</i> SEASON 01</span></header>
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="team"><span class="live-dot"></span><div><span class="eyebrow">YOUR INNINGS</span><h1>CHAMPIONS <span>XI</span></h1></div></div>
+      <div class="score"><strong id="score">0<span>/0</span></strong><span id="overs">0.0 / 2 OVERS</span></div>
+      <div class="stat"><span class="eyebrow">TARGET</span><strong>24</strong><small>TO WIN</small></div>
+      <div class="stat run-rate"><span class="eyebrow">RUN RATE</span><strong id="rate">0.0</strong><small id="needed">24 FROM 12</small></div>
+      <button id="pause" class="icon-button" aria-label="Pause game" disabled>II</button>
+    </section>
+    <section class="arena" aria-label="Cricket game">
+      <div class="ground-label"><span class="live-dot"></span> CHAMPIONS OVAL <span class="weather">☀ DAY MATCH</span></div>
+      <div id="game" role="img" aria-label="Cricket ground. Aim with left and right arrows, select loft with up or ground with down, and press Space to bat."></div>
+      <div class="delivery"><span id="phase">READY TO MAKE YOUR MARK?</span><b id="feedback" aria-live="polite">Twelve balls. One champion.</b></div>
+      <div id="overlay" class="overlay">
+        <div class="modal">
+          <span id="modal-kicker" class="eyebrow">WELCOME TO THE CREASE</span>
+          <h2 id="modal-title">Own the<br><em>next twelve.</em></h2>
+          <p id="modal-description">Chase 24 runs in 2 overs. You have 3 wickets.<br>Aim into the gaps, watch the ball, and time your swing.</p>
+          <div id="instructions" class="instructions"><span><kbd>←</kbd> <kbd>→</kbd> Aim</span><span><kbd>↑</kbd> Loft / <kbd>↓</kbd> Ground</span><span><kbd>SPACE</kbd> Swing</span><small>Running is automatic. Hit as the ball enters the gold contact ring.</small></div>
+          <button id="primary" class="primary">TAKE THE CREASE <span>↗</span></button>
+          <button id="overlay-restart" class="text-button" hidden>Restart challenge</button>
+          <small class="modal-foot">NO DOWNLOADS. JUST CRICKET.</small>
+        </div>
+      </div>
+    </section>
+    <section class="dashboard">
+      <div class="control-block"><span class="eyebrow">SHOT DIRECTION</span><div class="aim-controls"><button id="aim-left" aria-label="Aim left">←</button><div><b id="aim-label">STRAIGHT</b><div class="aim-track"><span id="aim-marker"></span></div></div><button id="aim-right" aria-label="Aim right">→</button></div></div>
+      <div class="control-block"><span class="eyebrow">SHOT TYPE</span><div class="shot-switch"><button id="ground" class="selected" aria-pressed="true">GROUND <kbd>↓</kbd></button><button id="loft" aria-pressed="false">LOFT <kbd>↑</kbd></button></div></div>
+      <div class="control-block timing"><span class="eyebrow">DELIVERY TIMING <span id="timing-label">WATCH THE BALL</span></span><div class="timing-track"><div class="sweet-spot"></div><div id="timing-marker"></div></div><small>EARLY <span>PERFECT</span> LATE</small></div>
+      <button id="swing" class="swing-button" disabled>SWING <kbd>SPACE</kbd></button>
+    </section>
+    <footer><div class="recent"><span class="eyebrow">THIS OVER</span><div id="balls"><span class="ball empty">–</span></div></div><p><kbd>P</kbd> Pause <span>•</span> Find the gaps. Trust your timing.</p><button id="restart" class="text-button">↻ Restart</button></footer>
+    <p id="load-error" role="alert" hidden>Game could not load. Reload the page and check that the vendor and src folders were published alongside index.html.</p>
+  </main>
+  <script src="./vendor/phaser-3.90.0.min.js" onerror="document.getElementById('load-error').hidden=false"></script>
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>
